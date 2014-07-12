@@ -1,0 +1,37 @@
+SUMMARY
+=======
+bt-agent is a daemon gets measurement data from health devices and post it to a server using HTTP protocol.
+A health device might be, blood pressure monitor with usb or blueetooth port
+A health device might be a weight scale with usb or bluetooth port
+
+bt-agent is designed for embedded systems, but you can run in any linux box.
+bt-agent is modular; if you want to add your device just copy and modify driver_xxxxx.c files
+or if you want to send measurement using another protocol copy and modify client_xxxx.c files
+
+
+TODO
+====
+- Add documentation here
+- use libbluetooth as shared library
+- DONE:code cleanup after modeular device, beware naming conventions
+- DONE:we should send result, not sys,dia,hb (may be it is weight, glucose
+- DONE:fix getopt options
+- DONE:define Error codes
+- DONE:if we use poll we can have smaller BUFFER_SIZEs
+- DONE:If we get -1 as numbytes that means we are disconnected. then apply it.
+- DONE:clients should send each type of meas by auto
+- DONE:merge: device_t cur_dev_t
+- optimize device listen codes with goto
+- DONE:implement mutex
+
+
+LICENSE
+=======
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
